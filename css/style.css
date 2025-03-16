@@ -312,7 +312,7 @@ main {
     color: #fff;
     text-transform: uppercase;
 
-    background: #d39646;
+    background: #2596be;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -336,7 +336,7 @@ main {
 @media only screen and (hover: hover) {
     .header-nav__item:hover {
         background: -webkit-gradient(linear, left top, left bottom, color-stop(13.64%, #d95104), color-stop(83.33%, #d95104)), -webkit-gradient(linear, left top, left bottom, color-stop(12.12%, #ff8b02), to(#ffb800));
-        background: linear-gradient(180deg, #d39646 13.64%, #d39646 83.33%), linear-gradient(180deg, #d39646 12.12%, #d39646 100%)
+        background: linear-gradient(180deg, #2596be 13.64%, #2596be 83.33%), linear-gradient(180deg, #2596be 12.12%, #2596be 100%)
     }
 }
 
@@ -1139,7 +1139,7 @@ main {
     font-size: 1.5625vw;
     border-radius: 20px;
     background: -webkit-gradient(linear, left top, left bottom, color-stop(13.64%, #f9b035), color-stop(83.33%, #ff9702));
-    background: #d39646;
+    background: #2596be;
     height: 100%;
     width: 12.96875vw;
     display: -webkit-box;
@@ -1207,8 +1207,8 @@ main {
     mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;
     mask-composite: exclude;
-    background: -webkit-gradient(linear, left top, left bottom, from(#fffcd1), to(#d39646)) 0 0/auto padding-box border-box;
-    background: linear-gradient(#fffcd1, #d39646) 0 0/auto padding-box border-box;
+    background: -webkit-gradient(linear, left top, left bottom, from(#fffcd1), to(#2596be)) 0 0/auto padding-box border-box;
+    background: linear-gradient(#fffcd1, #2596be) 0 0/auto padding-box border-box;
     background-clip: 'border-box'
 }
 
@@ -1238,7 +1238,7 @@ main {
 
 @media only screen and (hover: hover) {
     .content-code__link:hover {
-        background: #d39646
+        background: #2596be
     }
 }
 
