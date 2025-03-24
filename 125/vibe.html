@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shake iPhone with Sound</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 20%;
+        }
+        button {
+            font-size: 18px;
+            padding: 10px 20px;
+            border: none;
+            background-color: #007bff;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        /* Shake Animation */
+        @keyframes shake {
+            0% { transform: translate(2px, 2px) rotate(0deg); }
+            25% { transform: translate(-2px, -2px) rotate(-1deg); }
+            50% { transform: translate(2px, -2px) rotate(1deg); }
+            75% { transform: translate(-2px, 2px) rotate(0deg); }
+            100% { transform: translate(0, 0) rotate(0deg); }
+        }
+        .shake {
+            animation: shake 0.3s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Shake Your iPhone</h1>
+    <button id="shakeButton">Shake iPhone</button>
+
+    <!-- Sound Effect (Loud Vibrate Sound) -->
+    <audio id="vibrateSound">
+        <source src="https://www.fesliyanstudios.com/play-mp3/4384" type="audio/mpeg">
+    </audio>
+
+    <script>
+        document.getElementById("shakeButton").addEventListener("click", function() {
+            // Force Sound to Play (iPhone requires user interaction)
+            let sound = document.getElementById("vibrateSound");
+            sound.play().catch(error => console.log("Sound play blocked:", error));
+
+            // Haptic Feedback (for iPhone)
+            if (window.navigator && window.navigator.vibrate) {
+                navigator.vibrate([50, 50, 50]); // Works only on Android
+            } else if (window.navigator && window.navigator.webkit) {
+                try {
+                    window.navigator.webkit.messageHandlers.triggerHapticFeedback.postMessage("impactMedium");
+                } catch (e) {
+                    console.log("Haptic feedback not supported");
+                }
+            }
+
+            // Add Shake Animation
+            document.body.classList.add("shake");
+
+            // Remove shake effect after 0.5s
+            setTimeout(() => {
+                document.body.classList.remove("shake");
+            }, 500);
+        });
+    </script>
+
+</body>
+</html>
