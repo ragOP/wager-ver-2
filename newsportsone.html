@@ -31,6 +31,26 @@
 }
   </style>
     <meta name="robots" content="noindex,nofollow">
+  <script>
+      function getQueryParam(param) {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get(param);
+      }
+    
+      function appendSub2ToLinks() {
+        const sub2Value = getQueryParam("sub2");
+        if (sub2Value) {
+          document.querySelectorAll('a[href^="https://trk.easybenefits.info/offer/click/"], a[href^="https://wager.com/signup"]').forEach(link => {
+            const url = new URL(link.href);
+            url.searchParams.set("sub2", sub2Value);
+            link.href = url.toString();
+          });
+        }
+      }
+    
+      document.addEventListener("DOMContentLoaded", appendSub2ToLinks);
+    </script>
+
     
   </head>
   <body class=" " data-coupon="BUFFALOWHALE">
