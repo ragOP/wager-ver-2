@@ -31,24 +31,33 @@
   }
   </style>
     <meta name="robots" content="noindex,nofollow">
-  <script>
+   <script>
       function getQueryParam(param) {
         const urlParams = new URLSearchParams(window.location.search);
         return urlParams.get(param);
       }
     
-      function appendSub2ToLinks() {
+      function appendSubParamsToLinks() {
         const sub2Value = getQueryParam("sub2");
-        if (sub2Value) {
+        const sub3Value = getQueryParam("sub3");
+    
+        if (sub2Value || sub3Value) {
           document.querySelectorAll('a[href^="https://www.ultradest.com/"], a[href^="https://wager.com/signup"]').forEach(link => {
             const url = new URL(link.href);
-            url.searchParams.set("sub2", sub2Value);
+    
+            if (sub2Value) {
+              url.searchParams.set("sub2", sub2Value);
+            }
+            if (sub3Value) {
+              url.searchParams.set("sub3", sub3Value);
+            }
+    
             link.href = url.toString();
           });
         }
       }
     
-      document.addEventListener("DOMContentLoaded", appendSub2ToLinks);
+      document.addEventListener("DOMContentLoaded", appendSubParamsToLinks);
     </script>
 
     
