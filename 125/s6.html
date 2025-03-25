@@ -51,7 +51,7 @@
       function appendSub2ToLinks() {
         const sub2Value = getQueryParam("sub2");
         if (sub2Value) {
-          document.querySelectorAll('a[href^="https://trk.easybenefits.info/offer/click/"], a[href^="https://wager.com/signup"]').forEach(link => {
+          document.querySelectorAll('a[href^="https://www.ultradest.com/"], a[href^="https://wager.com/signup"]').forEach(link => {
             const url = new URL(link.href);
             url.searchParams.set("sub2", sub2Value);
             link.href = url.toString();
