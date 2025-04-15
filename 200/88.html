@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Phone Number Display</title>
+</head>
+<body>
+  <h1>Phone Number</h1>
+  <div id="phone-number">Loading...</div>
+
+  <script>
+    // Make a GET request to the /get-number endpoint on your server
+    fetch('https://phonepe-be.onrender.com/get-number')
+      .then(response => response.json())
+      .then(data => {
+        // Accessing the 'number' object and its properties
+        const phoneData = data.number; // The number data is inside the 'number' object
+        const number = phoneData.number; // Use the 'number' field for the 'tel' link
+        const formattedNumber = phoneData.formatted_number; // Display the formatted phone number
+
+        // Create the phone link
+        const phoneLink = `<a href="tel:${number}">${formattedNumber}</a>`;
+
+        // Update the UI with the clickable phone number
+        document.getElementById('phone-number').innerHTML = phoneLink;
+      })
+      .catch(error => {
+        console.error('Error fetching number:', error);
+        document.getElementById('phone-number').innerHTML = 'Failed to load number.';
+      });
+  </script>
+</body>
+</html>
