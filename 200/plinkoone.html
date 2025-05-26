@@ -20,12 +20,28 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <!-- End Google Tag Manager -->
     <style>
   
-  body {
-    background-image: url('../200/images/plinko.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-image: url('../200/images/plinko.jpg');
-    }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+}
+
+html, body {
+  height: 100%;
+  overflow: hidden;
+    background-color: black;
+}
+
+body {
+  background-image: url('../200/images/plinko.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center 130%; /* 👈 shift image up to cut top more */
+}
+
+
+
   
     @media (max-width: 768px) {
   body {
