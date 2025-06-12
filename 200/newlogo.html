@@ -25,21 +25,30 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     background-size: cover;
     background-color: black;
     background-position: center center;
-    background-size: 560px 200px;
+  background-size: 600px 200px; 
     background-attachment: fixed;
     background-repeat: no-repeat;
     /* background-image: url('2.png'); */
     }
+    .sub{
+
+    }
   
     @media (max-width: 768px) {
   body {
-    background-image: url('real logo.png');
+   background-image: url('real logo.png');
     background-color: black;
-    background-size: contain;
+    background-size: 80% auto; /* Zoom background on mobile */
     background-position: center center;
     background-repeat: no-repeat;
-    height: 100vh;  /* Full screen height */
-    width: 100vw;   /* Full screen width */
+    background-attachment: scroll;
+    height: 100vh;
+    width: 100vw;
+    margin: 20;
+    padding: 0;
+  }
+  .mob{
+    margin-top: -30px;
   }
 }
   </style>
@@ -91,7 +100,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             <span>SIGN UP</span>
           </a>
       </header>
-      <section class="content">
+      <section class="content mob">
         <div class="content-wrap flex">
           <a href="http://www.ultradest.com/MK69GP3/4MNZK6D/?uid=5808" class="header-logo">
             <img style="margin-bottom: -20px;" src="real.png" alt="logo">
